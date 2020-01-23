@@ -1,11 +1,16 @@
+from django.shortcuts import get_object_or_404, redirect
 from django.shortcuts import render
+
+from .models import SiteSetting
 
 # Create your views here.
 
 def index(request):
 
-	return render(request, 'front/index.html', {})
+	setting = SiteSetting.objects.get(pk=1)
+	return render(request, 'front/index.html', {'setting':setting})
 
 def about(request):
-
-	return render(request, 'front/about.html', {})	
+	
+	setting = SiteSetting.objects.get(pk=1)
+	return render(request, 'front/about.html', {'setting':setting})	
