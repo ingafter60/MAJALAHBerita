@@ -14,3 +14,8 @@ def about(request):
 	
 	setting = SiteSetting.objects.get(pk=1)
 	return render(request, 'front/about.html', {'setting':setting})	
+
+def news_detail(request):
+	
+	setting = SiteSetting.objects.get(pk=1)
+	return render(request, 'front/news_detail.html', {'setting':setting})	
